@@ -41,6 +41,7 @@ while chances > 0:
 
         print("Wrong Guess")
 
+        print("int:The word to be guess is a character name in Dashavataram")
         print("Remaining Chances:", chances)
 
 if chances == 0:
