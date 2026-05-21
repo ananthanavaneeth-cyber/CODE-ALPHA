@@ -1,0 +1,52 @@
+print("===== STOCK PORTFOLIO TRACKER =====")
+print("Welcome to the Stock Portfolio Tracker.")
+print("Explore company share prices and calculate your investment value based on your desired quantity of stocks.")
+print("Enter the stock name and quantity to know the total investment amount instantly.")
+
+stocks = {
+    "AAPL": 25000,
+    "GOOGLE": 32000,
+    "MICROSOFT": 35000,
+    "ACCENTURE": 15000,
+    "CAPGEMINI": 10000
+}
+
+stock_name = input("Enter Stock Name: ")
+
+stock_name = stock_name.upper()
+
+quantity = int(input("Enter Quantity: "))
+
+if stock_name in stocks:
+
+    price = stocks[stock_name]
+
+    total = price * quantity
+
+    print("Stock Price:", price)
+
+    print("Quantity:", quantity)
+
+    print("Total Investment Value:", total)
+
+    choice = input("Do you want to save result to a file? (yes/no): ")
+
+    if choice == "yes":
+
+        with open("C:\\Users\\anant\\OneDrive\\Desktop\\python programs\\portfolio_results.txt", "w") as file: # the address of folder to save the file
+
+            file.write("Stock Name: " + stock_name + "\n")
+
+            file.write("Stock Price: " + str(price) + "\n")
+
+            file.write("Quantity: " + str(quantity) + "\n")
+
+            file.write("Total Investment Value: " + str(total))
+
+        print("Results saved to portfolio_results.txt")
+
+    else:
+        print("Results not saved.")
+
+else:
+    print("Stock not available")
